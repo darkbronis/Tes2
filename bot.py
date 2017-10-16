@@ -129,6 +129,9 @@ def SEND_MESSAGE(op):
                     elapsed_time = time.time() - start
                     sendMessage(msg.to, "%sseconds" % (elapsed_time))
                     print ("\nCek Speed Bot")
+		
+		if msg.text == "myig":
+			sendMessage(msg.to,"rakha008")
 #-------------------------------------------------------------
 
         else:
