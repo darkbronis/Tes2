@@ -41,7 +41,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", WELCOME BANGSAD")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -51,7 +51,7 @@ tracer.addOpInterrupt(17,NOTIFIED_ACCEPT_GROUP_INVITATION)
 
 def NOTIFIED_KICKOUT_FROM_GROUP(op):
     try:
-				sendMessage(op.param1, client.getContact(op.param2).displayName + ", Kamu Kicker ya? main kick member lain aja :3\nkalau bukan PC saya aja, nanti saya undang lagi")
+				sendMessage(op.param1, client.getContact(op.param2).displayName + ", Kicker ea? Kick target")
 				client.kickoutFromGroup(op.param1,[op.param2])
 				client.inviteIntoGroup(op.param1,[op.param3])
     except Exception as e:
@@ -63,7 +63,7 @@ tracer.addOpInterrupt(19,NOTIFIED_KICKOUT_FROM_GROUP)
 
 def NOTIFIED_UPDATE_GROUP(op):
     try:
-                sendMessage(op.param1, client.getContact(op.param2).displayName + ", Jangan Dimainin QR-nya :3\nSaya Kick ya")
+                sendMessage(op.param1, client.getContact(op.param2).displayName + ", kick target")
                 client.kickoutFromGroup(op.param1,[op.param2])
     except Exception as e:
         print e
@@ -74,7 +74,7 @@ tracer.addOpInterrupt(11,NOTIFIED_UPDATE_GROUP)
 
 def NOTIFIED_CANCEL_INVITATION_GROUP(op):
     try:
-                sendMessage(op.param1, client.getContact(op.param2).displayName + ", Kenapa dibatalin?\nitu temen saya")
+                sendMessage(op.param1, client.getContact(op.param2).displayName + ", Kick target")
                 client.kickoutFromGroup(op.param1,[op.param2])
                 client.inviteIntoGroup(op.param1,[op.param3])
     except Exception as e:
