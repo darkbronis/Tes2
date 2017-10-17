@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Edited from script LineVodka script made by Merkremont
+# Edited from script LineVodka
 from LineAlpha import LineClient
 from LineAlpha.LineApi import LineTracer
 from LineAlpha.LineThrift.ttypes import Message
@@ -41,7 +41,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", WELCOME BANGSAD")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", wc")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
